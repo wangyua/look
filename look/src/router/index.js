@@ -10,6 +10,7 @@ const routes = [
     { path: '/bookstore', component: bookstore },
     { path: '/classification', component: classification },
     { path: '/lists', component: lists },
+    { path: '/', component: bookstore },
 ]
 
 const router = new VueRouter({

@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import rem from './../static/js/rem.js'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAxios, axios)
+Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

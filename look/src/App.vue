@@ -11,10 +11,6 @@ export default {
   components: {
     windows
   },
-  created(){
-    // 让屏幕高度撑开
-    document.body.style.height = document.documentElement.clientHeight + 'px';
-    }
 }
 </script>
 
@@ -25,7 +21,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-size: 16px;
+  font-size: .2rem;
 }
 *{
   padding: 0;
