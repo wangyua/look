@@ -1,8 +1,8 @@
 <template>
-  <div id="retui" class="retui_top">
-      <h2>精品热推</h2>
+  <div class="retui retui_top">
+      <h2>{{dat.title}}</h2>
       <div class="retui_bottom">
-        <div class="retui_box" v-for="(item,i) in dat.data" v-if="i<6">
+        <div class="retui_box" v-for="(item,i) in dat.data.data" v-if="i<6" @click="bookdet(item)">
           <img :src="'//qidian.qpic.cn/qdbimg/349573/'+ item.bid +'/150'" alt="">
           <p>{{item.bName}}</p>
           <p>{{item.bAuth}}</p>
@@ -19,11 +19,26 @@ export default {
   components:{
     huan
   },
-  props:['dat']
+  props:['dat'],
+  methods:{
+    bookdet(item){
+      console.log(item);
+      this.$router.push({
+            path: 'bookdet',
+            query:{
+              data:item
+            }
+        })
+    }
+  },
 }
 </script>
 
 <style>
+  .retui{
+    background-color: #fff;
+    padding: 1px 0 0 0 ;
+  }
   .retui_top h2{
     border-left: 3px solid skyblue;
     text-align: left;
@@ -36,6 +51,7 @@ export default {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
   }
   .retui_box{
     width: 28%;
@@ -44,7 +60,7 @@ export default {
   .retui_box img{
     width: 100%;
     border-radius: .1rem;
-    box-shadow: 2px 5px 5px #ddd;
+    box-shadow: 2px 2px 5px #ddd;
   }
   .retui_box p{
     text-align: left;

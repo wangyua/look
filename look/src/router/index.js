@@ -5,11 +5,13 @@ import bookshelf from './../pages/bookshelf.vue'
 import bookstore from './../pages/bookstore.vue'
 import classification from './../pages/classification.vue'
 import lists from './../pages/lists.vue'
+import bookdet from './../pages/bookdet.vue'
 const routes = [
     { path: '/bookshelf', component: bookshelf },
     { path: '/bookstore', component: bookstore },
     { path: '/classification', component: classification },
     { path: '/lists', component: lists },
+    { path: '/bookdet', component: bookdet },
     { path: '/', component: bookstore },
 ]
 

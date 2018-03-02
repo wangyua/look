@@ -1,5 +1,5 @@
 <template>
-  <div class="huan" @click="zhuan">
+  <div class="huan" @click="zhuan()">
     <p>换一换
       <img src="./../../static/img/huan.png" alt="" :class="show?'tu':'zhuan tu'">
     </p>
@@ -16,10 +16,12 @@ export default {
   },
   methods:{
     zhuan(){
-      this.show = false;
-      setTimeout(function(){
-        this.show = true
-      },100)
+      if(this.show){
+        this.show = !this.show;
+        setTimeout(()=>{
+          this.show = !this.show;
+        },3000)
+      }
     }
   }
 }
@@ -28,8 +30,7 @@ export default {
 <style>
   .huan{
     height: .7rem;
-    border-top: 1px solid #ddd;
-    padding-bottom: 7rem;
+    margin-bottom: 0.2rem;
   }
   .huan p{
     height: 100%;
